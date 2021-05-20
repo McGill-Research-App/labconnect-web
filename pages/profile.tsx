@@ -4,16 +4,16 @@ import { Layout } from "../components/Layout"
 import { Logo } from "../components/Logo"
 import { NextChakraLink } from "../components/NextChakraLink"
 
-interface IndexProps {
+interface ProfileProps {
   cookies?: string
 }
 
-const IndexPage = ({ cookies }: IndexProps) => (
+const ProfilePage = ({ cookies }: ProfileProps) => (
   <Chakra cookies={cookies}>
-    <Layout title="Home | LabConnect">
+    <Layout title="My Profile | LabConnect">
     </Layout>
   </Chakra>
 )
 
-export default IndexPage
+export default ProfilePage
 export { getServerSideProps } from "../Chakra"
