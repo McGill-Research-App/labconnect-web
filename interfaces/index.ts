@@ -48,3 +48,11 @@ export interface IResearchTags {
 export interface ITechniqueTags {
   tags: Array<string>
 }
+
+export interface ISkillTags {
+  tags: Array<string>
+}
+
+export interface IInterestTags {
+  tags: Array<string>
+}
