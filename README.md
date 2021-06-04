@@ -28,6 +28,7 @@ Application will open at http://localhost:3000.
 - [x] Landing (`/`)
 - [ ] Login (`/login`)
 - [ ] Register (`/register`)
+- [ ] Role-based routing
 
 ### Student
 

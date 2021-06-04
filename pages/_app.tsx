@@ -8,7 +8,9 @@ export interface AppRenderProps {
 import * as React from "react";
 import type { NextComponentType, NextPageContext } from "next";
 import type { NextRouter } from "next/router";
+// import { AppState } from "components/app-state";
 
 export default function App({ Component, pageProps }: AppRenderProps) {
-    return <Component {...pageProps} />
+  // const appState = useContext(AppState);
+  return <Component {...pageProps} />;
 }

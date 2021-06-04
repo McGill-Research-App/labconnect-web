@@ -1,9 +1,9 @@
 import { Heading, Wrap, WrapItem } from "@chakra-ui/react"
-import { Layout } from "../../components/Layout"
-import { ProfessorSummary } from "../../components/ProfessorSummary"
-import { NextChakraLink } from "../../components/NextChakraLink"
-import { Chakra } from "../../Chakra"
-import data from "../../utils/prof-data.json"
+import { Layout } from "../../../components/Layout"
+import { ProfessorSummary } from "../../../components/ProfessorSummary"
+import { NextChakraLink } from "../../../components/NextChakraLink"
+import { Chakra } from "../../../Chakra"
+import data from "../../../utils/prof-data.json"
 
 interface ProfessorProps {
   cookies?: string
@@ -30,4 +30,4 @@ const ProfessorsPage = ({ cookies }: ProfessorProps) => (
 )
 
 export default ProfessorsPage
-export { getServerSideProps } from "../../Chakra"
+export { getServerSideProps } from "../../../Chakra"

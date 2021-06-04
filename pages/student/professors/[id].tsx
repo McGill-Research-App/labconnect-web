@@ -11,17 +11,17 @@ import {
   Tag,
   Wrap,
 } from "@chakra-ui/react";
-import { Layout } from "../../components/Layout";
-import data from "../../utils/prof-data.json";
+import { Layout } from "../../../components/Layout";
+import data from "../../../utils/prof-data.json";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { Professor, IResearchTags, ITechniqueTags } from "../../interfaces";
-import { Chakra } from "../../Chakra";
+import { Professor, IResearchTags, ITechniqueTags } from "../../../interfaces";
+import { Chakra } from "../../../Chakra";
 import {
   ArrowForwardIcon,
   EmailIcon,
   ExternalLinkIcon,
 } from "@chakra-ui/icons";
-import FullOption from "../../components/FullOptionPie";
+import FullOption from "../../../components/FullOptionPie";
 
 const ResearchTags: React.FC<IResearchTags> = (props) => {
   return (
