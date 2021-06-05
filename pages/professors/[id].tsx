@@ -10,6 +10,7 @@ import {
   Link,
   Tag,
   Wrap,
+  VStack,
 } from "@chakra-ui/react";
 import { Layout } from "../../components/Layout";
 import data from "../../utils/prof-data.json";
@@ -25,29 +26,39 @@ import FullOption from "../../components/FullOptionPie";
 
 const ResearchTags: React.FC<IResearchTags> = (props) => {
   return (
-    <Wrap>
-      {props.tags.map((tag) => {
-        return (
-          <Tag size="lg" variant="subtle" colorScheme="purple" key={tag}>
-            {tag}
-          </Tag>
-        );
-      })}
-    </Wrap>
+    <VStack align="left" my={2}>
+      <Heading as="h4" size="sm" color="purple">
+        Research Topics
+      </Heading>
+      <Wrap my={1}>
+        {props.tags.map((tag) => {
+          return (
+            <Tag size="lg" variant="subtle" colorScheme="purple" key={tag}>
+              {tag}
+            </Tag>
+          );
+        })}
+      </Wrap>
+    </VStack>
   );
 };
 
 const TechniqueTags: React.FC<ITechniqueTags> = (props) => {
   return (
-    <Wrap>
-      {props.tags.map((tag) => {
-        return (
-          <Tag size="lg" variant="subtle" colorScheme="orange" key={tag}>
-            {tag}
-          </Tag>
-        );
-      })}
-    </Wrap>
+    <VStack align="left" my={2} mt={2}>
+      <Heading as="h4" size="sm" color="orange.500">
+        Techniques
+      </Heading>
+      <Wrap my={1}>
+        {props.tags.map((tag) => {
+          return (
+            <Tag size="lg" variant="subtle" colorScheme="orange" key={tag}>
+              {tag}
+            </Tag>
+          );
+        })}
+      </Wrap>
+    </VStack>
   );
 };
 
@@ -75,16 +86,25 @@ const ProfessorsPage = ({ item }: { item: Professor }) => (
               </Link>
             </Box>
           </Box>
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/en/d/d5/Professor_%28Money_Heist%29.jpg"
-            alt={`${item.name}`}
-            borderRadius="md"
-            mt={4}
-            mb={4}
-          />
-          <ResearchTags
-            tags={["Parkinson's Disease", "Mitochondrial Dysfunction"]}
-          />
+          {item.name == "Jean-François Trempe" ? (
+            <Image
+              src="https://www.mcgill.ca/pharma/files/pharma/jf_trempe.jpg"
+              alt={`${item.name}`}
+              borderRadius="md"
+              mt={4}
+              mb={4}
+            />
+          ) : (
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/en/d/d5/Professor_%28Money_Heist%29.jpg"
+              alt={`${item.name}`}
+              borderRadius="md"
+              mt={4}
+              mb={4}
+            />
+          )}
+          <ResearchTags tags={["Parkinson's Disease", "PINK1", "Parkin"]} />
+          <div></div>
           <TechniqueTags
             tags={["Mass Spectrometry", "X-ray Crystallography", "NMR"]}
           />
@@ -167,6 +187,7 @@ const ProfessorsPage = ({ item }: { item: Professor }) => (
                 </Flex>
               </Box>
               <Box mt={4}>
+                <Heading align="centre" size="md">Lab Distribution</Heading>
                 <FullOption
                   data={[
                     { title: "RA", value: 11, color: "#E9D8FD" },
