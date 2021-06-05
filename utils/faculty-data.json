@@ -1,7 +1,10 @@
 [
   {
     "faculty": "Agricultural and Environmental Sciences",
-    "schools": ["School of Human Nutrition", "Bieler School of Environment"],
+    "schools": [
+      "School of Human Nutrition", 
+      "Bieler School of Environment"
+    ],
     "departments": [
       "Animal Science",
       "Bioresource Engineering",
