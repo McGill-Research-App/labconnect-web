@@ -25,7 +25,7 @@ export interface Property {
   description: string
 }
 
-export interface Professor {
+export type Professor = {
   id: number
   name: string
   title: string

@@ -1,0 +1,155 @@
+[
+  {
+    "faculty": "Agricultural and Environmental Sciences",
+    "schools": ["School of Human Nutrition", "Bieler School of Environment"],
+    "departments": [
+      "Animal Science",
+      "Bioresource Engineering",
+      "Food Science and Agricultural Chemistry",
+      "Natural Resource Sciences - Agricultural Economics",
+      "Plant Science"
+    ]
+  },
+  {
+    "faculty": "Arts",
+    "schools": [
+      "Max Bell School of Public Policy",
+      "School of Social Work",
+      "Bieler School of Environment",
+      "School of Information Studies (SIS)",
+      "School of Religious Studies"
+    ],
+    "departments": [
+      "Anthropology",
+      "Art History and Communication Studies",
+      "East Asian Studies",
+      "Economics",
+      "English",
+      "French Language Centre",
+      "Littératures de langue française, de traduction et de création",
+      "Geography",
+      "History and Classical Studies",
+      "Languages, Literatures and Cultures",
+      "Linguistics",
+      "Philosophy",
+      "Political Science",
+      "Sociology"
+    ]
+  },
+  {
+    "faculty": "School of Continuing Studies",
+    "schools": [],
+    "departments": [
+      "Our Programs and Courses",
+      "Language and Intercultural Communication",
+      "Faculty Partnerships and Summer Studies",
+      "McGill Community for Lifelong Learning",
+      "Summer Studies"
+    ]
+  },
+  {
+    "faculty": "Dentistry",
+    "schools": [],
+    "departments": ["Centre for Research on Pain"]
+  },
+  {
+    "faculty": "Education",
+    "schools": [],
+    "departments": [
+      "Educational and Counselling Psychology",
+      "Integrated Studies in Education",
+      "Kinesiology and Physical Education"
+    ]
+  },
+  {
+    "faculty": "Engineering",
+    "schools": [],
+    "departments": [
+      "Bioengineering",
+      "Chemical Engineering",
+      "Civil Engineering",
+      "Electrical and Computer Engineering",
+      "Mechanical Engineering",
+      "Mining and Materials Engineering"
+    ]
+  },
+  {
+    "faculty": "Graduate and Postdoctoral Studies",
+    "schools": [
+      "Peter Guo-hua Fu School of Architecture",
+      "School of Urban Planning"
+    ],
+    "departments": []
+  },
+  {
+    "faculty": "Law",
+    "schools": [],
+    "departments": []
+  },
+  {
+    "faculty": "Desautels Management",
+    "schools": [],
+    "departments": []
+  },
+  {
+    "faculty": "Medicine and Health Sciences",
+    "schools": [
+      "School of Communication Sciences & Disorders",
+      "Ingram School of Nursing",
+      "School of Physical & Occupational Therapy",
+      "School of Population and Global Health"
+    ],
+    "departments": [
+      "Anatomy and Cell Biology",
+      "Anesthesia",
+      "Biochemistry",
+      "Biomedical Engineering",
+      "Diagnostic Radiology",
+      "Epidemiology, Biostatistics & Occupational Health",
+      "Family Medicine",
+      "Human Genetics",
+      "Medicine",
+      "Microbiology & Immunology",
+      "Neurology & Neurosurgery",
+      "Obstetrics & Gynecology",
+      "Oncology",
+      "Ophthalmology",
+      "Otolaryngology",
+      "Pathology",
+      "Pediatric Surgery",
+      "Pediatrics",
+      "Pharmacology & Therapeutics",
+      "Physiology",
+      "Psychiatry",
+      "Social Studies of Medicine",
+      "Surgery"
+    ]
+  },
+  {
+    "faculty": "Schulich School of Music",
+    "schools": [],
+    "departments": ["Performance", "Music Research"]
+  },
+  {
+    "faculty": "Science",
+    "schools": [
+      "Atmospheric and Oceanic Sciences",
+      "Biology",
+      "Chemistry",
+      "Earth & Planetary Sciences",
+      "Geography",
+      "Mathematics and Statistics",
+      "Bieler School of Environment",
+      "Physics",
+      "Psychology",
+      "Redpath Museum",
+      "School of Computer Science"
+    ],
+    "departments": [
+      "Anatomy and Cell Biology",
+      "Biochemistry",
+      "Microbiology and Immunology",
+      "Physiology"
+    ]
+  }
+]
