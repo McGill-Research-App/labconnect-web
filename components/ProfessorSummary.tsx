@@ -13,7 +13,6 @@ export const ProfessorSummary = ({ prof }: { prof: Professor }) => {
   const textColor = useColorModeValue("gray.600", "gray.400")
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      {/* <Image src={property.imageUrl} alt={property.imageAlt} /> */}
       <Box p="6">
         <Box d="flex" alignItems="baseline">
           <Box
