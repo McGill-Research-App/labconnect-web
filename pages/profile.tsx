@@ -665,7 +665,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                           </GridItem>
                           <GridItem>
                             <Text fontSize="xs" letterSpacing="wide" color="gray">
-                              Roberts Smith, John Doe, Jerry Dong
+                              Roberts Smith, Jerred Bear, John Doe
                             </Text>
                           </GridItem>
                           <GridItem>
@@ -702,7 +702,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                           </GridItem>
                           <GridItem>
                             <Text fontSize="xs" letterSpacing="wide" color="gray">
-                              Nimra Khan, Jean-François Trempe, Jerry Dong
+                              Nimra Khan, Jean-François Trempe, John Doe
                             </Text>
                           </GridItem>
                           <GridItem>
@@ -739,7 +739,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                           </GridItem>
                           <GridItem>
                             <Text fontSize="xs" letterSpacing="wide" color="gray">
-                              Andrew N. Bayne, Jean-François Trempe, Jerry Dong
+                              Andrew N. Bayne, Jean-François Trempe, John Doe
                             </Text>
                           </GridItem>
                           <GridItem>
