@@ -11,6 +11,12 @@ export type User = {
   name: string
 }
 
+export interface Position {
+    department: string
+    professor: string
+    title: string
+}
+
 export interface Property {
   id: string
   isNew: boolean
