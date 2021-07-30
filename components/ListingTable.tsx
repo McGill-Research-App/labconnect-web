@@ -4,18 +4,16 @@ import {
     Tbody,
     Tr,
     Th,
-    Td,
-    IconButton,
     Text,
-    Link,
 } from "@chakra-ui/react"
 import React from 'react';
-import { AddIcon, InfoOutlineIcon } from '@chakra-ui/icons'
 import { Position } from '../interfaces'
+import ListingRow from "./ListingRow";
+
 
 function ListingTable(props) {
     return (
-        <div>
+        <>
             <Text fontSize="2xl">{props.title}</Text>
             <Table variant="simple">
                 <Thead>
@@ -28,18 +26,12 @@ function ListingTable(props) {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {props.positions.map((position: Position) => (
-                        <Tr>
-                            <Td><Link href="/position_description">{position.department}</Link></Td>
-                            <Td><Link>{position.professor}</Link></Td>
-                            <Td><Link>{position.title}</Link></Td>
-                            <Td><IconButton aria-label="Search database" icon={<AddIcon/>} colorScheme="pink"/></Td>
-                            <Td><Link href="/position_description"><IconButton aria-label="Search database" icon={<InfoOutlineIcon/>}  colorScheme="blue"/></Link></Td>
-                        </Tr>
+                    {props.positions.map((position: Position, index: number) => ( 
+                        <ListingRow key={index} position={position}/>
                     ))}
                 </Tbody>
             </Table>
-        </div>
+        </>
     );
 }
 
