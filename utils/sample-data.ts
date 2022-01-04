@@ -48,8 +48,8 @@ const additionalValues = [
 const generateProperty = () => {
   const overrides = faker.helpers.randomize(additionalValues)
   return {
-    id: faker.random.uuid(),
-    isNew: faker.random.boolean(),
+    id: faker.datatype.uuid(),
+    isNew: faker.datatype.boolean(),
     imageUrl: overrides.img,
     //  empty - image adds no value for the user
     imageAlt: "",
