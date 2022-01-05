@@ -5,7 +5,12 @@ export interface AppRenderProps {
   router: NextRouter;
 }
 
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  gql,
+} from "@apollo/client";
 import type { NextComponentType, NextPageContext } from "next";
 import type { NextRouter } from "next/router";
 import * as React from "react";
@@ -39,5 +44,9 @@ export default function App({ Component, pageProps }: AppRenderProps) {
     console.log(result);
   });
 
-  return <Component {...pageProps} />;
+  return (
+    <ApolloProvider client={client}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }

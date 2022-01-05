@@ -1,51 +1,42 @@
+import { ChevronRightIcon, EditIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
-  Flex,
   Button,
+  ButtonGroup,
+  Center,
+  Flex,
   Grid,
+  GridItem,
   Heading,
   Image,
-  Text,
-  ButtonGroup,
   Link,
-  Tag,
-  Wrap,
-  GridItem,
-  SimpleGrid,
-  AspectRatio,
-  Stack,
-  HStack,
-  VStack,
-  Center,
   List,
   ListIcon,
   ListItem,
-  Spacer,
-  Icon,
+  SimpleGrid,
+  Stack,
   StackDivider,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
+  Tag,
+  Text,
+  VStack,
+  Wrap,
 } from "@chakra-ui/react";
-import { Layout } from "../components/Layout";
-import data from "../utils/prof-data.json";
-import { GetStaticProps, GetStaticPaths } from "next";
-import { User, ISkillTags, IInterestTags } from "../interfaces";
 import { Chakra } from "../Chakra";
-import {
-  ArrowForwardIcon,
-  EditIcon,
-  EmailIcon,
-  ExternalLinkIcon,
-  ChevronRightIcon,
-  UpDownIcon,
-} from "@chakra-ui/icons";
-import FullOption from "../components/FullOptionPie";
+import { Layout } from "../components/Layout";
+import { IInterestTags, ISkillTags } from "../interfaces";
 
 interface ProfileProps {
   cookies?: string;
+}
+
+interface FeatureProps {
+  title: string;
+  description: string;
 }
 
 const InterestTags: React.FC<IInterestTags> = (props) => {
@@ -76,16 +67,16 @@ const SkillTags: React.FC<ISkillTags> = (props) => {
   );
 };
 
-function Feature({ title, desc, ...rest }) {
+function Feature({ title, description, ...rest }: FeatureProps) {
   return (
     <Box p={5} shadow="md" borderWidth="1px" {...rest}>
       <Heading fontSize="xl">{title}</Heading>
-      <Text mt={4}>{desc}</Text>
+      <Text mt={4}>{description}</Text>
     </Box>
   );
 }
 
-const ProfilePage = ({ item }: { item: User }) => (
+const ProfilePage = () => (
   <Chakra>
     <Layout title={`Profile - LabConnect`}>
       <Grid
@@ -131,7 +122,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                 <Text>McGill University</Text>
                 <Text>MSc Candidate in Pharmacology</Text>
               </Box>
-              <Center j>
+              <Center>
                 <Image
                   src="https://media-exp1.licdn.com/dms/image/C4D03AQGzbA8KQ5mEGQ/profile-displayphoto-shrink_200_200/0/1566066591083?e=1629331200&v=beta&t=iahiU3Y0uASh5e52rHIBPouNimX1oWemxUCti9YqJoA"
                   alt={`alt`}
@@ -193,7 +184,14 @@ const ProfilePage = ({ item }: { item: User }) => (
                 Research Interests
               </Heading>
               <InterestTags
-                tags={["Parkinson's Disease", "Mitochondrial Dysfunction", "Machine Learning/Artificial Intelligence", "PINK1", "Parkin", "Organoids"]}
+                tags={[
+                  "Parkinson's Disease",
+                  "Mitochondrial Dysfunction",
+                  "Machine Learning/Artificial Intelligence",
+                  "PINK1",
+                  "Parkin",
+                  "Organoids",
+                ]}
               />
             </Box>
             <Box p={4} shadow="md">
@@ -223,8 +221,14 @@ const ProfilePage = ({ item }: { item: User }) => (
                 About Me
               </Heading>
               <Box>
-                <Text fontsize="lg" fontWeight="normal">
-                I am a Msc student in pharmacology seeking a PHD position in Pharmacology. I have extensive experience in computational analysis of proteomics. I am familiar with various mass spectrometry-based techniques such as isobaric labeling and stable isotope labeling by amino acids in cell culture. I am very passionate about mitochondria dysfunction and its role in neurodegenerative diseases. 
+                <Text fontSize="lg" fontWeight="normal">
+                  I am a Msc student in pharmacology seeking a PHD position in
+                  Pharmacology. I have extensive experience in computational
+                  analysis of proteomics. I am familiar with various mass
+                  spectrometry-based techniques such as isobaric labeling and
+                  stable isotope labeling by amino acids in cell culture. I am
+                  very passionate about mitochondria dysfunction and its role in
+                  neurodegenerative diseases.
                 </Text>
               </Box>
             </Box>
@@ -237,8 +241,9 @@ const ProfilePage = ({ item }: { item: User }) => (
               >
                 Experience
               </Heading>
-              <VStack 
-                spacing={4} align="stretch"
+              <VStack
+                spacing={4}
+                align="stretch"
                 divider={<StackDivider borderColor="gray.200" />}
               >
                 <Box>
@@ -282,7 +287,8 @@ const ProfilePage = ({ item }: { item: User }) => (
                           <List spacing={0}>
                             <ListItem>
                               <ListIcon as={ChevronRightIcon} />
-                              Computationally modeled superoxide spread in patients with Leber Hereditary Optic Neuropathy.
+                              Computationally modeled superoxide spread in
+                              patients with Leber Hereditary Optic Neuropathy.
                             </ListItem>
                           </List>
                         </GridItem>
@@ -331,7 +337,8 @@ const ProfilePage = ({ item }: { item: User }) => (
                           <List spacing={0}>
                             <ListItem>
                               <ListIcon as={ChevronRightIcon} />
-                              Building a web platform to help connect talent-seeking labs with ambitious students.
+                              Building a web platform to help connect
+                              talent-seeking labs with ambitious students.
                             </ListItem>
                           </List>
                         </GridItem>
@@ -399,8 +406,9 @@ const ProfilePage = ({ item }: { item: User }) => (
               >
                 Projects
               </Heading>
-              <VStack 
-                spacing={4} align="stretch"
+              <VStack
+                spacing={4}
+                align="stretch"
                 divider={<StackDivider borderColor="gray.200" />}
               >
                 <Box>
@@ -411,7 +419,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                         fontSize="lg"
                         letterSpacing="wide"
                       >
-                        Measuring Protein Turnover in Midbrain-Like Organoids 
+                        Measuring Protein Turnover in Midbrain-Like Organoids
                       </Text>
                     </GridItem>
                     {/* <GridItem>
@@ -428,19 +436,19 @@ const ProfilePage = ({ item }: { item: User }) => (
                       <List spacing={0}>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Processed all organoids and mouse lysates.
+                          Processed all organoids and mouse lysates.
                         </ListItem>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Prepared samples to be run on MS.
+                          Prepared samples to be run on MS.
                         </ListItem>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Calculated protein turnover using Topograph software. 
+                          Calculated protein turnover using Topograph software.
                         </ListItem>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Performed statistical analysis.
+                          Performed statistical analysis.
                         </ListItem>
                       </List>
                     </GridItem>
@@ -454,7 +462,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                         fontSize="lg"
                         letterSpacing="wide"
                       >
-                        Identifying Novel MPP Mutations 
+                        Identifying Novel MPP Mutations
                       </Text>
                     </GridItem>
                     {/* <GridItem>
@@ -471,15 +479,16 @@ const ProfilePage = ({ item }: { item: User }) => (
                       <List spacing={0}>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Query through databases such as GNOMAD and ClinVar.
+                          Query through databases such as GNOMAD and ClinVar.
                         </ListItem>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Developed scripts to analyze data from mitofates.
+                          Developed scripts to analyze data from mitofates.
                         </ListItem>
                         <ListItem>
                           <ListIcon as={ChevronRightIcon} />
-                            Performed statistical analysis to identify novel MPP mutations in relation to the MPP cleavage site. 
+                          Performed statistical analysis to identify novel MPP
+                          mutations in relation to the MPP cleavage site.
                         </ListItem>
                       </List>
                     </GridItem>
@@ -496,8 +505,9 @@ const ProfilePage = ({ item }: { item: User }) => (
               >
                 Education
               </Heading>
-              <VStack 
-                spacing={4} align="stretch"
+              <VStack
+                spacing={4}
+                align="stretch"
                 divider={<StackDivider borderColor="gray.200" />}
               >
                 <Box>
@@ -538,7 +548,11 @@ const ProfilePage = ({ item }: { item: User }) => (
                           </Text>
                         </GridItem> */}
                         <GridItem mt={1}>
-                          <Text fontStyle="semibold" letterSpacing="wide" fontSize="sm">
+                          <Text
+                            fontStyle="semibold"
+                            letterSpacing="wide"
+                            fontSize="sm"
+                          >
                             GPA: 3.8/4.0
                           </Text>
                         </GridItem>
@@ -546,7 +560,9 @@ const ProfilePage = ({ item }: { item: User }) => (
                           <List spacing={0}>
                             <ListItem>
                               <ListIcon as={ChevronRightIcon} />
-                              Studying protein turnover in midbrain-like organoids using stable isotope labeling and mass spectrometry.
+                              Studying protein turnover in midbrain-like
+                              organoids using stable isotope labeling and mass
+                              spectrometry.
                             </ListItem>
                           </List>
                         </GridItem>
@@ -592,7 +608,11 @@ const ProfilePage = ({ item }: { item: User }) => (
                           </Text>
                         </GridItem> */}
                         <GridItem mt={1}>
-                          <Text fontStyle="semibold" letterSpacing="wide" fontSize="sm">
+                          <Text
+                            fontStyle="semibold"
+                            letterSpacing="wide"
+                            fontSize="sm"
+                          >
                             GPA: 4.0/4.0
                           </Text>
                         </GridItem>
@@ -600,7 +620,8 @@ const ProfilePage = ({ item }: { item: User }) => (
                           <List spacing={0}>
                             <ListItem>
                               <ListIcon as={ChevronRightIcon} />
-                              Thesis: Using Reinforcement Learning to Simulate Protein Interactions
+                              Thesis: Using Reinforcement Learning to Simulate
+                              Protein Interactions
                             </ListItem>
                           </List>
                         </GridItem>
@@ -609,7 +630,7 @@ const ProfilePage = ({ item }: { item: User }) => (
                   </Grid>
                 </Box>
               </VStack>
-              </Box>
+            </Box>
             <Box p={4} shadow="md" rounded="xl">
               <Heading
                 fontWeight="bold"
@@ -622,7 +643,9 @@ const ProfilePage = ({ item }: { item: User }) => (
 
               <Accordion defaultIndex={[0]} allowMultiple>
                 <AccordionItem>
-                  <AccordionButton _expanded={{ bg: "gray.100", color: "black" }}>
+                  <AccordionButton
+                    _expanded={{ bg: "gray.100", color: "black" }}
+                  >
                     <Box flex="auto" textAlign="left">
                       <Text fontWeight="bold" fontSize="xl">
                         3
@@ -631,9 +654,9 @@ const ProfilePage = ({ item }: { item: User }) => (
 
                     <Box flex="auto" textAlign="left">
                       <Text
-                      fontWeight="semibold"
-                      fontSize="lg"
-                      letterSpacing="wide"
+                        fontWeight="semibold"
+                        fontSize="lg"
+                        letterSpacing="wide"
                       >
                         Publications
                       </Text>
@@ -655,27 +678,43 @@ const ProfilePage = ({ item }: { item: User }) => (
                               fontSize="lg"
                               letterSpacing="wide"
                             >
-                              Proteomic Profiling of Mitochondrial-Derived Vesicles in Brain Reveals Enrichment of Respiratory Complex Sub-assemblies and Small TIM Chaperones 
+                              Proteomic Profiling of Mitochondrial-Derived
+                              Vesicles in Brain Reveals Enrichment of
+                              Respiratory Complex Sub-assemblies and Small TIM
+                              Chaperones
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="md" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="md"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               Journal of Proteome
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               Roberts Smith, Jerred Bear, John Doe
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               2021
                             </Text>
                           </GridItem>
                           <GridItem mt={2}>
-                            <Link 
-                              href="https://doi.org/10.1021/acs.jproteome.0c0050" isExternal
+                            <Link
+                              href="https://doi.org/10.1021/acs.jproteome.0c0050"
+                              isExternal
                               color="purple"
                             >
                               See paper <ExternalLinkIcon mx="2px" />
@@ -692,27 +731,42 @@ const ProfilePage = ({ item }: { item: User }) => (
                               fontSize="lg"
                               letterSpacing="wide"
                             >
-                              Crystal structure of human PACRG in complex with MEIG1 reveals roles in axoneme formation and tubulin binding
+                              Crystal structure of human PACRG in complex with
+                              MEIG1 reveals roles in axoneme formation and
+                              tubulin binding
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="md" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="md"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               Structure
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               Nimra Khan, Jean-François Trempe, John Doe
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               2021
                             </Text>
                           </GridItem>
                           <GridItem mt={2}>
-                            <Link 
-                              href="https://doi.org/10.1016/j.str.2021.01.001" isExternal
+                            <Link
+                              href="https://doi.org/10.1016/j.str.2021.01.001"
+                              isExternal
                               color="purple"
                             >
                               See paper <ExternalLinkIcon mx="2px" />
@@ -729,27 +783,42 @@ const ProfilePage = ({ item }: { item: User }) => (
                               fontSize="lg"
                               letterSpacing="wide"
                             >
-                              Mechanisms of PINK1, ubiquitin and Parkin interactions in mitochondrial quality control and beyond
+                              Mechanisms of PINK1, ubiquitin and Parkin
+                              interactions in mitochondrial quality control and
+                              beyond
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="md" letterSpacing="wide" color="gray">
-                              Cellular and Molecular Life Sciences 
+                            <Text
+                              fontSize="md"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
+                              Cellular and Molecular Life Sciences
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               Andrew N. Bayne, Jean-François Trempe, John Doe
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               2019
                             </Text>
                           </GridItem>
                           <GridItem mt={2}>
-                            <Link 
-                              href="https://doi.org/10.1007/s00018-019-03203-4" isExternal
+                            <Link
+                              href="https://doi.org/10.1007/s00018-019-03203-4"
+                              isExternal
                               color="purple"
                             >
                               See paper <ExternalLinkIcon mx="2px" />
@@ -759,11 +828,12 @@ const ProfilePage = ({ item }: { item: User }) => (
                       </Box>
                     </VStack>
                   </AccordionPanel>
-
                 </AccordionItem>
 
                 <AccordionItem>
-                  <AccordionButton _expanded={{ bg: "gray.100", color: "black" }}>
+                  <AccordionButton
+                    _expanded={{ bg: "gray.100", color: "black" }}
+                  >
                     <Box flex="auto" textAlign="left">
                       <Text fontWeight="bold" fontSize="xl">
                         1
@@ -772,9 +842,9 @@ const ProfilePage = ({ item }: { item: User }) => (
 
                     <Box flex="auto" textAlign="left">
                       <Text
-                      fontWeight="semibold"
-                      fontSize="lg"
-                      letterSpacing="wide"
+                        fontWeight="semibold"
+                        fontSize="lg"
+                        letterSpacing="wide"
                       >
                         Conferences
                       </Text>
@@ -796,16 +866,25 @@ const ProfilePage = ({ item }: { item: User }) => (
                               fontSize="lg"
                               letterSpacing="wide"
                             >
-                              Measuring Protein Turnover in Mammalian Models of Parkinson’s Disease
+                              Measuring Protein Turnover in Mammalian Models of
+                              Parkinson’s Disease
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="md" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="md"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               Canadian Society of Molecular Biosciences
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               2021
                             </Text>
                           </GridItem>
@@ -816,7 +895,9 @@ const ProfilePage = ({ item }: { item: User }) => (
                 </AccordionItem>
 
                 <AccordionItem>
-                  <AccordionButton _expanded={{ bg: "gray.100", color: "black" }}>
+                  <AccordionButton
+                    _expanded={{ bg: "gray.100", color: "black" }}
+                  >
                     <Box flex="auto" textAlign="left">
                       <Text fontWeight="bold" fontSize="xl">
                         2
@@ -825,9 +906,9 @@ const ProfilePage = ({ item }: { item: User }) => (
 
                     <Box flex="auto" textAlign="left">
                       <Text
-                      fontWeight="semibold"
-                      fontSize="lg"
-                      letterSpacing="wide"
+                        fontWeight="semibold"
+                        fontSize="lg"
+                        letterSpacing="wide"
                       >
                         Awards
                       </Text>
@@ -853,12 +934,20 @@ const ProfilePage = ({ item }: { item: User }) => (
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="md" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="md"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               CIHR, NSERC, and SSHRC
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               2020
                             </Text>
                           </GridItem>
@@ -866,7 +955,9 @@ const ProfilePage = ({ item }: { item: User }) => (
                             <List spacing={0}>
                               <ListItem>
                                 <ListIcon as={ChevronRightIcon} />
-                                The CGS-M scholarship is administered jointly by Canada’s three granting agencies: CIHR, NSERC and SSHRC
+                                The CGS-M scholarship is administered jointly by
+                                Canada’s three granting agencies: CIHR, NSERC
+                                and SSHRC
                               </ListItem>
                             </List>
                           </GridItem>
@@ -878,7 +969,6 @@ const ProfilePage = ({ item }: { item: User }) => (
                               </ListItem>
                             </List>
                           </GridItem>
-                        
                         </Grid>
                       </Box>
 
@@ -894,12 +984,20 @@ const ProfilePage = ({ item }: { item: User }) => (
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="md" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="md"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               McGill
                             </Text>
                           </GridItem>
                           <GridItem>
-                            <Text fontSize="xs" letterSpacing="wide" color="gray">
+                            <Text
+                              fontSize="xs"
+                              letterSpacing="wide"
+                              color="gray"
+                            >
                               2020
                             </Text>
                           </GridItem>
@@ -911,7 +1009,6 @@ const ProfilePage = ({ item }: { item: User }) => (
                               </ListItem>
                             </List>
                           </GridItem>
-                        
                         </Grid>
                       </Box>
                     </VStack>
