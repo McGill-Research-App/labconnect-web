@@ -55,7 +55,7 @@ const validationSchema = Yup.object().shape({
 
 const SignupPage = () => (
   <Chakra>
-    <Layout title="Signup - LabConnect">
+    <Layout title="Sign Up - LabConnect">
       <Flex w="full" align="center" justifyContent="center">
         <Box w="container.lg" bg="gray.50">
           <Formik
@@ -300,7 +300,7 @@ const SignupPage = () => (
                       </SimpleGrid>
                     </Form>
                   </VStack>
-                  <DisplayFormikState {...props} />
+                  {/* <DisplayFormikState {...props} /> */}
                 </>
               );
             }}

@@ -23,7 +23,7 @@ interface IndexProps {
 
 const IndexPage = ({ cookies }: IndexProps) => (
   <Chakra cookies={cookies}>
-    <Layout title="Home | LabConnect">
+    <Layout title="Home - LabConnect">
       <Flex
         align="center"
         justify={{ base: "center", md: "space-around", xl: "space-between" }}

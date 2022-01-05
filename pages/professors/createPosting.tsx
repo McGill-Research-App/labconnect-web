@@ -10,17 +10,24 @@ import {
   Select,
   SimpleGrid,
   Text,
+  Textarea,
   Tooltip,
   VStack,
 } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
+import dynamic from "next/dynamic";
 import * as Yup from "yup";
 import { Chakra } from "../../Chakra";
 import { Layout } from "../../components/Layout";
 
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+});
+
 const validationSchema = Yup.object().shape({
   title: Yup.string().required("Required"),
   description: Yup.string().required("Required"),
+  descriptionPlain: Yup.string().required("Required"),
   employer: Yup.string().required("Required"),
   location: Yup.string().required("Required"),
   department: Yup.string().required("Required"),
@@ -31,6 +38,7 @@ const validationSchema = Yup.object().shape({
 const initialValues = {
   title: "",
   description: "",
+  descriptionPlain: "",
   employer: "",
   location: "",
   department: "",
@@ -88,18 +96,20 @@ const CreatePostingPage = () => (
                         )}
                       </GridItem>
                       <GridItem colSpan={2}>
-                        <FormLabel htmlFor="description">Description</FormLabel>
-                        <Input
-                          id="description"
-                          name="description"
-                          placeholder="PhD candidate for a collaborative project"
-                          onChange={handleChange}
-                          onBlur={handleBlur}
+                        <FormLabel htmlFor="Description">Description</FormLabel>
+                        <ReactQuill
+                          theme="snow"
                           value={values.description}
+                          placeholder="PhD candidate for a collaborative project"
+                          onChange={(content, _delta, _source, editor) => {
+                            values.description = editor.getHTML();
+                            values.descriptionPlain = editor.getText();
+                            handleChange(content);
+                          }}
                         />
-                        {errors.description && touched.description && (
+                        {errors.descriptionPlain && touched.descriptionPlain && (
                           <Text color="red.500" fontSize="xs">
-                            {errors.description}
+                            {errors.descriptionPlain}
                           </Text>
                         )}
                       </GridItem>
