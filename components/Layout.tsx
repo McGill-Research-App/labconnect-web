@@ -44,6 +44,9 @@ export const Layout = ({
                 <NextChakraLink href="/professors" fontWeight="bold">
                   Professors
                 </NextChakraLink>
+                <NextChakraLink href="/positions_listing" fontWeight="bold">
+                  Positions
+                </NextChakraLink>
 
               </HStack>
             </nav>
